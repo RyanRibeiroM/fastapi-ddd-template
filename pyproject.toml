@@ -5,7 +5,10 @@ description = "this project is a DDD template"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "alembic>=1.19.2",
     "fastapi>=0.141.1",
+    "psycopg[binary]>=3.3.5",
+    "sqlalchemy>=2.0.52",
     "uvicorn>=0.52.4",
 ]
 
@@ -33,7 +36,7 @@ suppress-none-returning = true
 [tool.mypy]
 python_version = "3.13"
 files = ["src"]
-mypy_path = "src"
+mypy_path = "."
 strict = true
 
 [[tool.mypy.overrides]]
@@ -41,4 +44,9 @@ module = "tests.*"
 disallow_untyped_defs = false
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["."]
+
+[tool.uv.workspace]
+members = [
+    "alembic",
+]

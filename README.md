@@ -9,7 +9,12 @@ O uv irá instalar todas as dependências do projeto.
 
 para inicializar:
 ```cmd
-    uv run uvicorn main:app --app-dir src --reload
+    uv run uvicorn src.main:app --app-dir . --reload
 ```
 
 A api estara funcionando em **http://127.0.0.1:8000**
+
+Com docker: 
+```cmd
+    docker compose up -d --build
+```
