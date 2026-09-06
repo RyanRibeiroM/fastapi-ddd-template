@@ -38,3 +38,7 @@ htmlcov/
 postgres_data/
 redis_data/
 
+# Lints
+.mypy_cache/
+.ruff_cache/ 
+
